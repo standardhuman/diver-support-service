@@ -277,14 +277,15 @@ export default function Home() {
       {/* 8: Pricing Philosophy Section */}
        <section id="pricing" className="py-24 sm:py-32 bg-gray-50">
         <div className="mx-auto max-w-4xl px-6 lg:px-8 text-center">
-           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Fair Pricing Focused on Your Success</h2>
+           <h2 className="text-base font-semibold leading-7 text-blue-600">Pricing Philosophy</h2>
+           <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Transparent Value, Tangible ROI</p>
            <p className="mt-6 text-lg leading-8 text-gray-600">
              We believe in transparent partnership. Our pricing is designed to provide clear Return on Investment by saving you valuable time and boosting your efficiency. We offer flexible options, including targeted commissions only on new business we generate for you. Let's find the perfect plan during your free consultation – no hidden fees, just clear value.
            </p>
             <div className="mt-10">
                <a
-                 href="#contact" // Link to final CTA/contact form
-                 className="inline-block rounded-md border border-transparent bg-blue-600 px-6 py-3 text-base font-medium text-white shadow hover:bg-blue-700"
+                 href="#contact-final" // Link to final CTA/contact form
+                 className="rounded-md bg-blue-600 px-6 py-3 text-base font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 transition-colors"
                >
                  Discuss Pricing in a Free Consultation
                </a>
@@ -296,21 +297,40 @@ export default function Home() {
        <section id="testimonials" className="py-24 sm:py-32">
          <div className="mx-auto max-w-7xl px-6 lg:px-8">
            <div className="mx-auto max-w-2xl text-center">
-             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Don't Just Take Our Word For It</h2>
-             <p className="mt-4 text-lg leading-8 text-gray-600">
+             <h2 className="text-base font-semibold leading-7 text-blue-600">Testimonials</h2>
+             <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Don't Just Take Our Word For It</p>
+             <p className="mt-6 text-lg leading-8 text-gray-600">
                Hear from divers who reclaimed their time and grew their business with ShoreSupport.
              </p>
            </div>
-           {/* Placeholder for Testimonial Cards/Slider */}
-           <div className="mt-16 text-center text-gray-500">
-             [Testimonials Coming Soon]
+           {/* Placeholder for Testimonial Cards/Slider - Simple text for now */}
+           <div className="mx-auto mt-16 flow-root max-w-2xl sm:mt-20 lg:mx-0 lg:max-w-none">
+             <div className="-mt-8 sm:-mt-0 sm:columns-2 sm:text-[0] lg:columns-3">
+               {/* Example Testimonial Structure (Repeat 2-3 times) */}
+               <div className="pt-8 sm:inline-block sm:w-full sm:px-4">
+                 <figure className="rounded-2xl bg-gray-50 p-8 text-sm leading-6">
+                   <blockquote className="text-gray-900">
+                     <p>"Working with ShoreSupport cut my admin time in half and helped me land three big new clients. It's been a game-changer for my business and my sanity."</p>
+                   </blockquote>
+                   <figcaption className="mt-6 flex items-center gap-x-4">
+                     {/* <img className="h-10 w-10 rounded-full bg-gray-300" src="" alt="" /> */}
+                     <div className="h-10 w-10 rounded-full bg-gray-300"></div> {/* Placeholder Image */}
+                     <div>
+                       <div className="font-semibold text-gray-900">[Diver Name]</div>
+                       <div className="text-gray-600">[Business Name]</div>
+                     </div>
+                   </figcaption>
+                 </figure>
+               </div>
+                {/* Add 1-2 more testimonial figures here when available */}
+             </div>
            </div>
          </div>
        </section>
 
       {/* 10: Final Call-to-Action Section */}
       <section id="contact-final" className="bg-blue-700"> {/* High contrast background */}
-        <div className="mx-auto max-w-4xl px-6 py-24 text-center lg:px-8">
+        <div className="mx-auto max-w-4xl px-6 py-24 sm:py-32 text-center lg:px-8">
           <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
             Ready to Spend Less Time Managing, More Time Diving?
           </h2>
@@ -330,8 +350,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Placeholder for the actual Contact Form Component (or integrate CallToAction here) */}
-      {/* <CallToAction /> Currently, the CTA section (10) has its own button. Decide if you want a separate form section or link the button to #contact where the CallToAction component renders the form. For now, leaving separate conceptually. */}
+      {/* Placeholder: Insert actual Contact Form Component or section here */}
+      <div id="contact">
+        {/* This is where the CallToAction component's form would logically go if separated */}
+        {/* If the button above links directly to Calendly, this section might not be needed */}
+         {/* <CallToAction /> */}
+      </div>
 
       {/* 11: Footer */}
       <Footer />

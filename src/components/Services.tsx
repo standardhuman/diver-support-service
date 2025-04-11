@@ -3,89 +3,104 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import {
-  DocumentCheckIcon,
-  CalendarIcon,
-  CurrencyDollarIcon,
-  GlobeAltIcon,
   ClipboardDocumentListIcon,
+  CurrencyDollarIcon,
+  CalendarDaysIcon,
+  BuildingStorefrontIcon,
+  UserGroupIcon,
+  WrenchScrewdriverIcon,
   ShieldCheckIcon,
+  BookOpenIcon,
 } from '@heroicons/react/24/outline'
 
-const services = [
+const serviceCategories = [
   {
-    name: 'Client Acquisition Support',
-    description: 'Targeted marketing, SEO, and lead generation to help grow your client base.',
-    icon: GlobeAltIcon,
+    category: "Streamlined Operations",
+    items: [
+      { name: 'Automated Invoicing & Payments', description: 'Reliable billing and payment processing without the chase.', icon: CurrencyDollarIcon },
+      { name: 'Intelligent Scheduling & Routing', description: 'Maximize dive time with optimized schedules and routes.', icon: CalendarDaysIcon },
+      { name: 'Proactive Inventory Management', description: 'Ensure you always have the necessary supplies and anodes on hand.', icon: WrenchScrewdriverIcon },
+      { name: 'Financial Admin Support', description: 'Guidance on bookkeeping and expense tracking basics.', icon: BookOpenIcon },
+    ]
   },
   {
-    name: 'Invoicing & Payment Processing',
-    description: 'Streamlined billing system with automated payment tracking and follow-up.',
-    icon: CurrencyDollarIcon,
+    category: "Premium Client Experience",
+    items: [
+      { name: 'Professional Digital Presence', description: 'Modern website, SEO, and Google Business Profile management.', icon: BuildingStorefrontIcon },
+      { name: 'Dedicated Client Portals', description: 'Secure online access for clients to view logs, videos, and manage their account.', icon: UserGroupIcon },
+    ]
   },
   {
-    name: 'Scheduling Coordination',
-    description: 'Efficient management of service requests and route optimization.',
-    icon: CalendarIcon,
-  },
-  {
-    name: 'Digital Presence Management',
-    description: 'Professional website, SEO, and online service log management.',
-    icon: DocumentCheckIcon,
-  },
-  {
-    name: 'Equipment & Inventory Support',
-    description: 'Tracking systems and sourcing assistance for your equipment needs.',
-    icon: ClipboardDocumentListIcon,
-  },
-  {
-    name: 'Insurance & Compliance',
-    description: 'Guidance and resources for maintaining proper coverage and compliance.',
-    icon: ShieldCheckIcon,
-  },
-]
+    category: "Business Growth & Support",
+    items: [
+      { name: 'Targeted Client Acquisition', description: 'Marketing and lead generation support to expand your reach.', icon: UserGroupIcon },
+      { name: 'Insurance & Compliance Resources', description: 'Navigate requirements with helpful information and guidance.', icon: ShieldCheckIcon },
+    ]
+  }
+];
 
 export default function Services() {
-  const [ref, inView] = useInView({
+  const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.1,
-  })
+  });
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.15, delayChildren: 0.1 }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+  };
 
   return (
-    <div id="services" className="bg-gray-50 py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <div id="services" className="bg-gray-50">
+      <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8">
         <motion.div
-          ref={ref}
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.8 }}
-          className="mx-auto max-w-2xl text-center"
+          initial="hidden"
+          animate={inView ? "visible" : "hidden"}
+          variants={itemVariants}
+          className="mx-auto max-w-2xl text-center mb-16 sm:mb-20"
         >
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            Comprehensive Support Services
-          </h2>
-          <p className="mt-6 text-lg leading-8 text-gray-600">
-            Choose the services that best fit your needs. We offer flexible packages to support your business growth.
+          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">How We Support You</h2>
+          <p className="mt-4 text-lg leading-8 text-gray-600">
+            A comprehensive suite of services designed to handle the complexities of your business, so you don't have to.
           </p>
         </motion.div>
-        <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
-          <div className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
-            {services.map((service, index) => (
-              <motion.div
-                key={service.name}
-                initial={{ opacity: 0, y: 20 }}
-                animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                className="flex flex-col bg-white rounded-2xl p-8 shadow-sm ring-1 ring-gray-200"
-              >
-                <div className="mb-6 flex h-10 w-10 items-center justify-center rounded-lg bg-blue-600">
-                  <service.icon className="h-6 w-6 text-white" aria-hidden="true" />
-                </div>
-                <h3 className="text-lg font-semibold leading-7 text-gray-900">{service.name}</h3>
-                <p className="mt-4 text-base leading-7 text-gray-600">{service.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
+
+        <motion.div
+          ref={ref}
+          variants={containerVariants}
+          initial="hidden"
+          animate={inView ? "visible" : "hidden"}
+          className="space-y-16"
+        >
+          {serviceCategories.map((category) => (
+            <div key={category.category}>
+              <h3 className="text-2xl font-semibold leading-7 text-gray-900 mb-8 text-center sm:text-left">{category.category}</h3>
+              <dl className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-8">
+                {category.items.map((service) => (
+                  <motion.div key={service.name} className="relative" variants={itemVariants}>
+                    <dt className="flex items-center gap-x-3 text-base font-semibold leading-7 text-gray-900">
+                      <div className="flex h-10 w-10 flex-none items-center justify-center rounded-lg bg-blue-100">
+                        <service.icon className="h-6 w-6 text-blue-700" aria-hidden="true" />
+                      </div>
+                      {service.name}
+                    </dt>
+                    <dd className="mt-1 flex flex-auto flex-col text-base leading-7 text-gray-600">
+                      <p className="flex-auto pl-13">{service.description}</p>
+                    </dd>
+                  </motion.div>
+                ))}
+              </dl>
+            </div>
+          ))}
+        </motion.div>
       </div>
     </div>
   )

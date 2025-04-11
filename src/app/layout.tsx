@@ -2,21 +2,25 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({
+  subsets: ["latin"],
+  display: 'swap',
+  variable: '--font-inter',
+});
 
 export const metadata: Metadata = {
-  title: "ShoreSupport Systems - Expert Support for Independent Hull Cleaning Divers",
-  description: "Empowering independent hull cleaning divers with expert operational support services. Focus on diving while we handle admin, marketing, and logistics.",
+  title: "ShoreSupport Systems - Diver Operational Support",
+  description: "Reclaim your time and grow your dive business with expert operational support. We handle the admin so you can focus on diving.",
 };
 
 export default function RootLayout({
   children,
-}: {
-  children: React.ReactNode
-}) {
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className={`${inter.variable} font-sans`}>
+      <body>{children}</body>
     </html>
   );
 }

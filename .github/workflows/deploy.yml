@@ -36,6 +36,12 @@ jobs:
         run: find . -type f -not -path "*/node_modules/*" -not -path "*/.git/*" | sort
       - name: Install dependencies
         run: npm ci
+      - name: Verify Tailwind Installation
+        run: |
+          echo "Checking npm list..."
+          npm ls tailwindcss postcss autoprefixer || true
+          echo "Checking node_modules directory..."
+          ls -l node_modules/tailwindcss || echo "tailwindcss directory not found in node_modules"
       - name: Show Next.js config
         run: cat next.config.mjs
       - name: Show Tailwind config

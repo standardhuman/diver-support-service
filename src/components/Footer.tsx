@@ -1,3 +1,5 @@
+'use client'
+
 const navigation = {
   main: [
     { name: 'About', href: '#' },

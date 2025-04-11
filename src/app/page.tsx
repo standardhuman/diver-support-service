@@ -8,6 +8,9 @@ import Image from 'next/image'
 // Import icons (adjust imports as needed based on final icon choices)
 import { CheckCircleIcon, CurrencyDollarIcon, CalendarDaysIcon, SparklesIcon, CubeIcon, UserCircleIcon, ClockIcon, BuildingStorefrontIcon, WrenchScrewdriverIcon, BookOpenIcon, UserGroupIcon, ShieldCheckIcon, ArrowPathIcon, LightBulbIcon, ChatBubbleLeftRightIcon } from '@heroicons/react/24/outline' 
 
+// Define basePath at the top level for use in Image components
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
 export default function Home() {
   return (
     <div className="bg-white text-gray-800 antialiased font-sans">
@@ -60,7 +63,7 @@ export default function Home() {
             <div className="lg:col-span-6 xl:col-span-5">
                <div className="aspect-h-3 aspect-w-4 rounded-lg bg-gray-100 overflow-hidden shadow-lg"> 
                  <Image 
-                    src="/solution-graphic.png"
+                    src={`${basePath}/solution-graphic.png`}
                     alt="Conceptual graphic illustrating ShoreSupport Systems solution"
                     width={800}
                     height={600}
@@ -259,7 +262,7 @@ export default function Home() {
             <div className="lg:col-span-6 xl:col-span-5 lg:order-last">
                <div className="aspect-h-4 aspect-w-3 rounded-lg bg-gray-100 overflow-hidden shadow-lg">
                  <Image 
-                    src="/founder-brian.jpg"
+                    src={`${basePath}/founder-brian.jpg`}
                     alt="Diver cleaning propeller underwater with text 'For Divers, by Divers'"
                     width={600}
                     height={800}

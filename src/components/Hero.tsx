@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 
+// Define basePath at the module level or ensure it's accessible
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
 
 export default function Hero() {

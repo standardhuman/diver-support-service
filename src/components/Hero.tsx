@@ -2,9 +2,18 @@
 
 import { motion } from 'framer-motion'
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
 export default function Hero() {
+  const heroStyle = {
+    backgroundImage: `url(${basePath}/hero-background.jpg)`,
+  };
+
   return (
-    <section className="relative bg-[url('/hero-background.jpg')] bg-cover bg-center py-32 sm:py-48">
+    <section 
+      className="relative bg-cover bg-center py-32 sm:py-48" 
+      style={heroStyle}
+    >
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/50" aria-hidden="true"></div>
 

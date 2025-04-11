@@ -1,3 +1,5 @@
+'use client'
+
 import Hero from '@/components/Hero'
 import Features from '@/components/Features'
 import Services from '@/components/Services'
@@ -6,12 +8,18 @@ import Footer from '@/components/Footer'
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
+    <div className="bg-white text-gray-800 antialiased">
       <Hero />
-      <Features />
-      <Services />
-      <CallToAction />
+      <div className="py-24 sm:py-32">
+        <Features /> 
+      </div>
+      <div className="bg-gray-50 py-24 sm:py-32">
+        <Services />
+      </div>
+      <div className="py-24 sm:py-32">
+        <CallToAction />
+      </div>
       <Footer />
-    </main>
+    </div>
   )
 }

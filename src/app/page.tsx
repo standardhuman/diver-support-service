@@ -3,6 +3,7 @@
 import Hero from '@/components/Hero'
 import NavBar from '@/components/NavBar'
 import Footer from '@/components/Footer'
+import Image from 'next/image'
 
 // Import icons (adjust imports as needed based on final icon choices)
 import { CheckCircleIcon, CurrencyDollarIcon, CalendarDaysIcon, SparklesIcon, CubeIcon, UserCircleIcon, ClockIcon, BuildingStorefrontIcon, WrenchScrewdriverIcon, BookOpenIcon, UserGroupIcon, ShieldCheckIcon, ArrowPathIcon, LightBulbIcon, ChatBubbleLeftRightIcon } from '@heroicons/react/24/outline' 
@@ -57,9 +58,14 @@ export default function Home() {
           <div className="lg:grid lg:grid-cols-12 lg:gap-x-16 lg:gap-y-8 items-center">
              {/* Image/Graphic Column */}
             <div className="lg:col-span-6 xl:col-span-5">
-               <div className="aspect-h-3 aspect-w-4 rounded-lg bg-gray-100 overflow-hidden">
-                 {/* Replace with <Image> component when ready */}
-                 <div className="w-full h-full flex items-center justify-center text-gray-400 text-sm">[Image: Brian / Conceptual Graphic]</div>
+               <div className="aspect-h-3 aspect-w-4 rounded-lg bg-gray-100 overflow-hidden shadow-lg"> 
+                 <Image 
+                    src="/solution-graphic.png"
+                    alt="Conceptual graphic illustrating ShoreSupport Systems solution"
+                    width={800}
+                    height={600}
+                    className="object-cover object-center"
+                 />
                </div>
             </div>
             {/* Text Column */}
@@ -251,9 +257,14 @@ export default function Home() {
           <div className="lg:grid lg:grid-cols-12 lg:gap-x-16 lg:gap-y-8 items-center">
             {/* Image Column */} 
             <div className="lg:col-span-6 xl:col-span-5 lg:order-last">
-               <div className="aspect-h-4 aspect-w-3 rounded-lg bg-gray-100 overflow-hidden">
-                 {/* Replace with <Image> component of Brian */}
-                 <div className="w-full h-full flex items-center justify-center text-gray-400 text-sm">[Founder Photo Placeholder]</div>
+               <div className="aspect-h-4 aspect-w-3 rounded-lg bg-gray-100 overflow-hidden shadow-lg">
+                 <Image 
+                    src="/founder-brian.jpg"
+                    alt="Brian Cline, Founder of ShoreSupport Systems"
+                    width={600}
+                    height={800}
+                    className="object-cover object-center"
+                 />
                </div>
             </div>
             {/* Text Column */}

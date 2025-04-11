@@ -17,17 +17,17 @@ export default function Hero() {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
-              Reclaim Your Time, Grow Your Dive Business
+              Dive More. Manage Less. Grow Faster.
             </h1>
             <p className="mt-6 text-xl leading-8 text-gray-200">
-              Expert operational support designed to give you more freedom and profitability.
+              ShoreSupport Systems provides expert operational support—built by a successful diver—to handle your admin, streamline your business, and free you up to focus on what you do best.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <a
-                href="#features"
-                className="rounded-md bg-blue-600 px-4 py-3 text-base font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 transition-colors"
+                href="#contact-final"
+                className="rounded-md bg-blue-600 px-6 py-3 text-base font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 transition-colors"
               >
-                See How It Works
+                Schedule Your Free Consultation
               </a>
             </div>
           </motion.div>

@@ -260,7 +260,7 @@ export default function Home() {
                <div className="aspect-h-4 aspect-w-3 rounded-lg bg-gray-100 overflow-hidden shadow-lg">
                  <Image 
                     src="/founder-brian.jpg"
-                    alt="Brian Cline, Founder of ShoreSupport Systems"
+                    alt="Diver cleaning propeller underwater with text 'For Divers, by Divers'"
                     width={600}
                     height={800}
                     className="object-cover object-center"

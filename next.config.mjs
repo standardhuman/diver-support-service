@@ -4,10 +4,7 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: process.env.NODE_ENV === 'production' ? '/diver-support-service' : '',
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/diver-support-service/' : '',
-  distDir: 'dist',
-  cleanDistDir: true,
+  basePath: '/diver-support-service',
 }
 
 export default nextConfig 

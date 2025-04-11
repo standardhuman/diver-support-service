@@ -50,6 +50,8 @@ jobs:
         env:
           NEXT_PUBLIC_BASE_PATH: /diver-support-service
           NODE_ENV: production
+      - name: Check output directory content
+        run: ls -laR out/
       - name: Check output directory
         run: ls -la
       - name: Check /out directory

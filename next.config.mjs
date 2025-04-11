@@ -6,6 +6,8 @@ const nextConfig = {
   },
   // Remove basePath when testing locally, uncomment when deploying to GitHub Pages
   basePath: process.env.NODE_ENV === 'production' ? '/diver-support-service' : '',
+  trailingSlash: true,
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/diver-support-service/' : '',
 }
 
 export default nextConfig 

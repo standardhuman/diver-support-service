@@ -19,15 +19,15 @@ export default function Hero() {
             <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
               Reclaim Your Time, Grow Your Dive Business
             </h1>
-            <p className="mt-6 text-lg leading-8 text-gray-200">
-              Leverage expert support systems designed by a USCG Master, Instructor, and successful dive business owner who scaled from 0 to 200 clients in under two years.
+            <p className="mt-6 text-xl leading-8 text-gray-200">
+              Expert operational support designed to give you more freedom and profitability.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <a
-                href="#services"
+                href="#features"
                 className="rounded-md bg-blue-600 px-4 py-3 text-base font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 transition-colors"
               >
-                Discover Our Systems
+                See How It Works
               </a>
             </div>
           </motion.div>

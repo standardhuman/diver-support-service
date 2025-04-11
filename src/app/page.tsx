@@ -20,57 +20,32 @@ export default function Home() {
       <section id="problem" className="py-24 sm:py-32 bg-gray-50">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Chained to the Desk After a Day Underwater?</h2>
-            <p className="mt-4 text-lg leading-8 text-gray-600">
-              Independent divers spend up to 30% of their time on unpaid admin. Time that could be spent diving, growing the business, or simply relaxing.
+            <h2 className="text-base font-semibold leading-7 text-blue-600">Sound Familiar?</h2>
+            <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Is Admin Killing Your Profit & Your Free Time?</p>
+            <p className="mt-6 text-lg leading-8 text-gray-600">
+              Independent divers often spend up to 30% of their valuable time on unpaid admin—time that could be spent diving, growing the business, or simply relaxing.
             </p>
           </div>
-          {/* Placeholder for Icons + Text Grid */}
-          <div className="mt-16 grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-y-16">
-            {/* Example Item (Repeat for other pain points) */}
-            <div className="flex items-start gap-x-4">
-              <CurrencyDollarIcon className="h-8 w-8 flex-none text-blue-600" aria-hidden="true" />
-              <div>
-                <h3 className="text-lg font-semibold leading-7 text-gray-900">Invoicing Headaches</h3>
-                <p className="mt-1 text-base leading-7 text-gray-600">Wasting hours creating invoices and chasing late payments?</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-x-4">
-              <CalendarDaysIcon className="h-8 w-8 flex-none text-blue-600" aria-hidden="true" />
-              <div>
-                <h3 className="text-lg font-semibold leading-7 text-gray-900">Scheduling Chaos</h3>
-                <p className="mt-1 text-base leading-7 text-gray-600">Struggling to optimize routes and fit in more dives?</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-x-4">
-              <UserGroupIcon className="h-8 w-8 flex-none text-blue-600" aria-hidden="true" />
-              <div>
-                <h3 className="text-lg font-semibold leading-7 text-gray-900">Inconsistent Growth</h3>
-                <p className="mt-1 text-base leading-7 text-gray-600">Finding it hard to market effectively and attract new clients?</p>
-              </div>
-            </div>
-             <div className="flex items-start gap-x-4">
-              <WrenchScrewdriverIcon className="h-8 w-8 flex-none text-blue-600" aria-hidden="true" />
-              <div>
-                <h3 className="text-lg font-semibold leading-7 text-gray-900">Inventory Hassles</h3>
-                <p className="mt-1 text-base leading-7 text-gray-600">Running out of anodes or supplies at the wrong time?</p>
-              </div>
-            </div>
-             <div className="flex items-start gap-x-4">
-              <BuildingStorefrontIcon className="h-8 w-8 flex-none text-blue-600" aria-hidden="true" />
-              <div>
-                <h3 className="text-lg font-semibold leading-7 text-gray-900">Tech Overwhelm</h3>
-                <p className="mt-1 text-base leading-7 text-gray-600">Frustrated with managing websites, logs, and software?</p>
-              </div>
-            </div>
-             <div className="flex items-start gap-x-4">
-              <ClockIcon className="h-8 w-8 flex-none text-blue-600" aria-hidden="true" />
-              <div>
-                <h3 className="text-lg font-semibold leading-7 text-gray-900">Lost Personal Time</h3>
-                <p className="mt-1 text-base leading-7 text-gray-600">Working late on admin instead of enjoying your evenings?</p>
-              </div>
-            </div>
-            {/* ... Add other pain points as icon+text blocks ... */}
+          {/* Refined Icons + Text Grid */}
+          <div className="mx-auto mt-16 grid max-w-none grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-y-16">
+            {
+              [
+                { name: 'Invoicing Headaches', description: 'Wasting hours creating invoices and chasing late payments?', icon: CurrencyDollarIcon },
+                { name: 'Scheduling Chaos', description: 'Struggling to optimize routes and fit in more dives?', icon: CalendarDaysIcon },
+                { name: 'Inconsistent Growth', description: 'Finding it hard to market effectively and attract new clients?', icon: UserGroupIcon },
+                { name: 'Inventory Hassles', description: 'Running out of anodes or supplies at the critical moment?', icon: WrenchScrewdriverIcon },
+                { name: 'Tech Overwhelm', description: 'Frustrated managing websites, service logs, and software?', icon: BuildingStorefrontIcon },
+                { name: 'Lost Personal Time', description: 'Working late on paperwork instead of enjoying your evenings?', icon: ClockIcon },
+              ].map((item) => (
+                <div key={item.name} className="flex flex-col items-center text-center sm:items-start sm:text-left gap-y-3">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-100 text-blue-700">
+                    <item.icon className="h-7 w-7" aria-hidden="true" />
+                  </div>
+                  <h3 className="text-lg font-semibold leading-7 text-gray-900">{item.name}</h3>
+                  <p className="text-base leading-7 text-gray-600">{item.description}</p>
+                </div>
+              ))
+            }
           </div>
            <p className="mt-16 text-center text-lg leading-8 text-gray-700 font-medium">You deserve to focus on diving, not drowning in paperwork.</p>
         </div>
@@ -79,22 +54,37 @@ export default function Home() {
       {/* 3: Solution Section */}
       <section id="solution" className="py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="lg:grid lg:grid-cols-12 lg:gap-16 items-center">
-            <div className="lg:col-span-6">
-               {/* Visual Placeholder: Approaching photo of Brian or conceptual graphic */}
-               <div className="w-full h-80 bg-gray-200 rounded-lg mb-8 lg:mb-0 flex items-center justify-center text-gray-500">[Image/Graphic Placeholder]</div>
+          <div className="lg:grid lg:grid-cols-12 lg:gap-x-16 lg:gap-y-8 items-center">
+             {/* Image/Graphic Column */}
+            <div className="lg:col-span-6 xl:col-span-5">
+               <div className="aspect-h-3 aspect-w-4 rounded-lg bg-gray-100 overflow-hidden">
+                 {/* Replace with <Image> component when ready */}
+                 <div className="w-full h-full flex items-center justify-center text-gray-400 text-sm">[Image: Brian / Conceptual Graphic]</div>
+               </div>
             </div>
-            <div className="lg:col-span-6">
-              <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">The Support System Built For Divers, By a Diver.</h2>
+            {/* Text Column */}
+            <div className="mt-8 lg:mt-0 lg:col-span-6 xl:col-span-7">
+              <h2 className="text-base font-semibold leading-7 text-blue-600">The ShoreSupport Solution</h2>
+              <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Built For Divers, By a Diver.</p>
               <p className="mt-6 text-lg leading-8 text-gray-600">
-                ShoreSupport Systems acts as your dedicated background team, providing tailored support using systems proven successful in a thriving dive business (0 to 200 clients in &lt;2 years!).
+                ShoreSupport Systems acts as your dedicated background team, providing tailored support using systems proven successful in a thriving dive business (scaled from 0 to nearly 200 clients in under 2 years!).
               </p>
-              <p className="mt-4 text-lg leading-8 text-gray-600">
-                <strong className="font-semibold text-gray-900">Crucially:</strong> You maintain 100% control of your clients, your work standards, your insurance, and your independence.
-              </p>
-              <p className="mt-4 text-lg leading-8 text-gray-600">
-                 Whether you're established and looking to reclaim time, or new and needing a complete system to scale, we have solutions designed for you.
-              </p>
+              <dl className="mt-8 max-w-xl space-y-4 text-base leading-7 text-gray-600 lg:max-w-none">
+                 <div className="relative pl-9">
+                    <dt className="inline font-semibold text-gray-900">
+                      <CheckCircleIcon className="absolute left-1 top-1 h-5 w-5 text-blue-600" aria-hidden="true" />
+                       Maintain Full Control:
+                    </dt>
+                    <dd className="inline"> You keep 100% control of your clients, work standards, insurance, and independence.</dd>
+                 </div>
+                 <div className="relative pl-9">
+                    <dt className="inline font-semibold text-gray-900">
+                       <CheckCircleIcon className="absolute left-1 top-1 h-5 w-5 text-blue-600" aria-hidden="true" />
+                       Support for Every Stage:
+                    </dt>
+                    <dd className="inline"> Whether you're established or just starting, we tailor solutions to help you reclaim time and scale effectively.</dd>
+                 </div>
+              </dl>
             </div>
           </div>
         </div>
@@ -103,39 +93,31 @@ export default function Home() {
       {/* 4: How It Works Section */}
       <section id="how-it-works" className="py-24 sm:py-32 bg-gray-50">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center mb-16">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Simple Steps to More Diving, Less Admin</h2>
+          <div className="mx-auto max-w-2xl text-center mb-16 sm:mb-20">
+            <h2 className="text-base font-semibold leading-7 text-blue-600">Getting Started</h2>
+            <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">More Diving, Less Admin in 4 Simple Steps</p>
           </div>
-          {/* Placeholder for 4-Step Graphic - Using simple numbered list for now */}
-          <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-4">
-            <div className="text-center sm:text-left">
-              <div className="mb-4 flex justify-center sm:justify-start">
-                <span className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-100 text-xl font-bold text-blue-700">1</span>
-              </div>
-              <h3 className="text-lg font-semibold leading-7 text-gray-900">Discovery Call</h3>
-              <p className="mt-1 text-base leading-7 text-gray-600">We listen to understand your business, goals, and pain points (no obligation).</p>
-            </div>
-             <div className="text-center sm:text-left">
-              <div className="mb-4 flex justify-center sm:justify-start">
-                <span className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-100 text-xl font-bold text-blue-700">2</span>
-              </div>
-              <h3 className="text-lg font-semibold leading-7 text-gray-900">Tailored Plan</h3>
-              <p className="mt-1 text-base leading-7 text-gray-600">We propose specific support services designed for your maximum benefit & ROI.</p>
-            </div>
-            <div className="text-center sm:text-left">
-              <div className="mb-4 flex justify-center sm:justify-start">
-                <span className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-100 text-xl font-bold text-blue-700">3</span>
-              </div>
-              <h3 className="text-lg font-semibold leading-7 text-gray-900">Seamless Execution</h3>
-              <p className="mt-1 text-base leading-7 text-gray-600">Our team expertly handles the agreed-upon tasks in the background.</p>
-            </div>
-             <div className="text-center sm:text-left">
-              <div className="mb-4 flex justify-center sm:justify-start">
-                 <span className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-100 text-xl font-bold text-blue-700">4</span>
-              </div>
-              <h3 className="text-lg font-semibold leading-7 text-gray-900">You Thrive</h3>
-              <p className="mt-1 text-base leading-7 text-gray-600">Focus on diving, enjoy smoother operations, increased profits, and more free time.</p>
-            </div>
+          {/* Refined 4-Step Layout */}
+          <div className="relative mx-auto grid max-w-md grid-cols-1 gap-y-10 lg:max-w-none lg:grid-cols-4 lg:gap-x-8">
+            {/* Connecting Lines (Hidden on mobile) */}
+            <div className="absolute inset-x-0 top-1/2 h-px -translate-y-1/2 bg-gray-300 hidden lg:block" aria-hidden="true"></div>
+
+            {
+              [
+                { name: 'Discovery Call', description: 'We listen to understand your business, goals, and pain points (no obligation).' },
+                { name: 'Tailored Plan', description: 'We propose specific support services designed for your maximum benefit & ROI.' },
+                { name: 'Seamless Execution', description: 'Our team expertly handles the agreed-upon tasks in the background.' },
+                { name: 'You Thrive', description: 'Focus on diving, enjoy smoother operations, increased profits, and more free time.' },
+              ].map((step, index) => (
+                <div key={step.name} className="relative rounded-lg bg-white p-8 shadow-md ring-1 ring-gray-900/5 text-center lg:text-left">
+                   <div className="flex justify-center lg:justify-start">
+                     <span className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-600 text-lg font-semibold text-white">{index + 1}</span>
+                   </div>
+                   <h3 className="mt-6 text-lg font-semibold leading-7 text-gray-900">{step.name}</h3>
+                   <p className="mt-2 text-base leading-7 text-gray-600">{step.description}</p>
+                </div>
+              ))
+            }
           </div>
         </div>
       </section>
